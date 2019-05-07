@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The input for the <a>ExecuteChangeSet</a> action.",
+            "properties": {
+                "ChangeSetName": {
+                    "description": "The name or ARN of the change set that you want use to update the specified stack.",
+                    "maxLength": 1600,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*",
+                    "type": "string"
+                },
+                "ClientRequestToken": {
+                    "description": "A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully received them.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9][-a-zA-Z0-9]*",
+                    "type": "string"
+                },
+                "StackName": {
+                    "description": "If you specified the name of a change set, specify the stack name or ID (ARN) that is associated with the change set you want to execute.",
+                    "minLength": 1,
+                    "pattern": "([a-zA-Z][-a-zA-Z0-9]*)|(arn:\\b(aws|aws-us-gov|aws-cn)\\b:[-a-zA-Z0-9:/._+]*)",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ChangeSetName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

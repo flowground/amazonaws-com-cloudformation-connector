@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The input for <a>ListStacks</a> action.",
+            "properties": {
+                "NextToken": {
+                    "description": "A string that identifies the next page of stacks that you want to retrieve.",
+                    "maxLength": 1024,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "StackStatusFilter": {
+                    "description": "Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.",
+                    "items": {
+                        "enum": [
+                            "CREATE_IN_PROGRESS",
+                            "CREATE_FAILED",
+                            "CREATE_COMPLETE",
+                            "ROLLBACK_IN_PROGRESS",
+                            "ROLLBACK_FAILED",
+                            "ROLLBACK_COMPLETE",
+                            "DELETE_IN_PROGRESS",
+                            "DELETE_FAILED",
+                            "DELETE_COMPLETE",
+                            "UPDATE_IN_PROGRESS",
+                            "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS",
+                            "UPDATE_COMPLETE",
+                            "UPDATE_ROLLBACK_IN_PROGRESS",
+                            "UPDATE_ROLLBACK_FAILED",
+                            "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS",
+                            "UPDATE_ROLLBACK_COMPLETE",
+                            "REVIEW_IN_PROGRESS"
+                        ],
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

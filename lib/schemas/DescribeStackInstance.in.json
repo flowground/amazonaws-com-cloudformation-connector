@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "StackInstanceAccount": {
+                    "description": "The ID of an AWS account that's associated with this stack instance.",
+                    "pattern": "[0-9]{12}",
+                    "type": "string"
+                },
+                "StackInstanceRegion": {
+                    "description": "The name of a region that's associated with this stack instance.",
+                    "type": "string"
+                },
+                "StackSetName": {
+                    "description": "The name or the unique stack ID of the stack set that you want to get stack instance information for.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StackSetName",
+                "StackInstanceAccount",
+                "StackInstanceRegion"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
